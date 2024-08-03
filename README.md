@@ -1,8 +1,14 @@
-# dotfiles
-Packages used:
+# Dotfiles 2024
 
-stumpwm, my choice in WM
-setxkbmap for ctrl remap to caps-lock
-xss-lock, xsecurelock, xscreensaver for screen lock
+[Main]
+WM: StumpWM
+SH: Bash
+TERM: URxvt using Xsel for copy-paste
+LOCK: xSecureLock triggered by xss-lock, Xscreensaver visuals
+MUSIC: NCMPCPP using MPD
 
-mangohud & gamemoderun for ease-of-access in gaming
+[Misc]
+- setxkbmap for ctrl remap to caps-lock.
+- sx instead of startx for starting xorg.
+- cli-visualizer for music.
+- MangoHud & Gamemoderun for game optimization.
