@@ -1,0 +1,22 @@
+#!/bin/bash
+
+WM=/usr/bin/stumpwm
+
+LANG=en_US.UTF-8
+export LANG
+
+# Sets the caps-lock key to ctrl
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
+# load .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+env XSECURELOCK_SAVER=saver_xscreensaver
+
+xss-lock -- env XSECURELOCK_AUTH_FOREGROUND_COLOR="#00cc00" XSECURELOCK_BACKGROUND_COLOR="#000000" XSECURELOCK_PASSWORD_PROMPT="time_hex" XSECURELOCK_SHOW_DATETIME="true" XSECURELOCK_SHOW_HOSTNAME="true" XSECURELOCK_FONT="ProggyCrossed:style=Medium:size=12:hinting=true:antialias=true" XSECURELOCK_SHOW_USERNAME="true" XSECURELOCK_SAVER=saver_xscreensaver xsecurelock &
+
+xset s on
+xset s 128 120
+
+export MANGOHUD=1
+$WM
