@@ -1,0 +1,45 @@
+!xterm file
+!@linux.org.ru
+
+!special
+*.foreground:	#00cc00
+*.background:	#000000
+*.cursorColor:	#00cc00
+!black
+*.color0:	#000000
+*.color8:	#000000
+!red
+*.color1:	#cc0000
+*.color9:	#cc0000
+!green
+*.color2:	#00cc00
+*.color10:	#00cc00
+!yellow
+*.color3:	#cccc00
+*.color11:	#cccc00
+!blue
+*.color4:	#0000cc
+*.color12:	#0000cc
+!magenta
+*.color5:	#00cccc
+*.color13:	#00cccc
+!cyan
+*.color6:	#cc00cc
+*.color14:	#cc00cc
+!white
+*.color7:	#cccccc
+*.color15:	#cccccc
+
+*.font: -*-terminus-medium-r-normal-*-17-*-*-*-*-*-*-*
+xterm*mouseWheelScrollPage:	true
+xterm*cursorBlink:		true
+xterm*saveLines:		5000
+xterm*internalborder:		5
+XTerm*selectToClipboard:	true
+XTerm*VT100.Translations:	#override \
+	Shift Ctrl<Key>C:	copy-selection(CLIPBOARD) \n\
+	Shift Ctrl<Key>V:	insert-selection(CLIPBOARD) \n\
+	Shift Ctrl<Key>V:	insert-selection(PRIMARY) \n\
+	Shift<Btn1Down>:	select-start() \n\
+	Shift<Btn1Motion>:	select-extend() \n\
+	Shift<Btn1Up>:		select-end(CLIPBOARD) \n\

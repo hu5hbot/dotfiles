@@ -1,0 +1,55 @@
+#ratpoison file
+#@linux.org.ru
+
+#global
+set winname title
+set winfmt %n %s %t
+set fgcolor #00cc00
+set bgcolor #000000
+set font -*-terminus-medium-r-normal-*-17-*-*-*-*-*-*-*
+set winliststyle column
+set waitcursor 1
+set barpadding 1 1
+set wingravity n
+set transgravity center
+set bargravity c
+set border 0
+set barborder 1
+
+#workspaces
+exec /usr/bin/rpws init 9 -k
+bind C-1 exec rpws 1
+bind C-2 exec rpws 2
+bind C-3 exec rpws 3
+bind C-4 exec rpws 4
+bind C-5 exec rpws 5
+bind C-6 exec rpws 6
+bind C-7 exec rpws 7
+bind C-8 exec rpws 8
+bind C-9 exec rpws 9
+
+#shameless vim binds
+definekey top M-l exec ratpoison -c "select -" -c "gprev" -c "next"
+definekey top M-h exec ratpoison -c "select -" -c "gnext" -c "next"
+definekey top M-j next
+definekey top M-k prev
+
+#binds
+unbind c
+
+bind c exec xterm
+bind C exec xterm
+bind f exec firefox
+bind F exec torbrowser-launcher
+bind e exec urxvt -e "vim"
+bind l exec xset s activate
+
+definekey top M-q kill 
+definekey top M-C-Left exchangeleft 
+definekey top M-C-Right exchangeright 
+definekey top M-C-Up exchangeup 
+definekey top M-C-Down exchangedown 
+definekey top M-Left resize -20 0 
+definekey top M-Right resize 20 0 
+definekey top M-Up resize 0 20 
+definekey top M-Down resize 0 -20
