@@ -1,4 +1,4 @@
-#dotfiles
+# dotfiles
 
 I don't want to reveal much about my system but I want to archive the code that works for me for my future work/ease-of-access.
 
@@ -10,8 +10,7 @@ Quick notes:
 - I won't maintain a package-listing, as it's heavily volatile
 - I prefer to set variables in .bashrc for global usage
 
-OS: Arch
-SH: Bash
-WM: Ratpoison
-TERM: XTerm
- 
+* OS: Arch
+* SH: Bash
+* WM: Ratpoison
+* TERM: XTerm
