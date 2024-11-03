@@ -1,0 +1,41 @@
+;; stumpwm rc file
+;; by hu5hbot (github.com/hu5hbotMei)
+;; @linux.org.ru
+
+;; bar
+(set-fg-color "#00bfff")
+(set-bg-color "#ffffff")
+(set-msg-border-width 1)
+(set-border-color "#00bfff")
+(setf *message-window-gravity* :top
+	*input-window-gravity* :top)
+
+;; keys
+(define-key *root-map* (kbd "RET") "exec xterm")
+(define-key *root-map* (kbd "f") "exec firefox")
+
+;; modeline
+(setf *group-format* " %t ")
+(setf *window-format* "%m%n%s ")
+(setf *mode-line-timeout* 1)
+
+(setf *time-modeline-string "%e, %a %l:%M")
+(set-font "-lucy-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*")
+
+(defun get-date-modeline ()
+ (stumpwm:run-shell-command
+  (format nil "date +\"~A\""
+	*time-modeline-string*) t))
+
+(setf *screen-mode-line-format*
+	(list "%g %W ^> "
+	'(:eval (get-date-modeline))
+	))
+
+(setf *mode-line-border-width* 0)
+(setf *mode-line-background-color* "#ffffff")
+(setf *mode-line-foreground-color* "#00bfff")
+
+;; windows
+(set-focus-color "#00bfff")
+(set-unfocus-color "#00bfff")
