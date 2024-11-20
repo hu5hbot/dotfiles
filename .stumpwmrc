@@ -3,10 +3,13 @@
 ;; @linux.org.ru
 
 ;; bar
-(set-fg-color "#00bfff")
-(set-bg-color "#ffffff")
+(set-fg-color "#cccccc")
+(set-bg-color "#000000")
 (set-msg-border-width 1)
-(set-border-color "#00bfff")
+(set-border-color "#cccccc")
+(setf *normal-border-width* 2)
+(setf *maxsize-border-width* 2)
+(setf *window-border-style* :thin)
 (setf *message-window-gravity* :top
 	*input-window-gravity* :top)
 
@@ -17,25 +20,26 @@
 ;; modeline
 (setf *group-format* " %t ")
 (setf *window-format* "%m%n%s ")
-(setf *mode-line-timeout* 1)
 
-(setf *time-modeline-string "%e, %a %l:%M")
-(set-font "-lucy-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*")
+(setf *time-modeline-string* "%d.%m.%Y_%H:%M")
+(set-font "-*-lucidatypewriter-medium-r-normal-*-10-*-*-*-*-*-*-*")
 
 (defun get-date-modeline ()
  (stumpwm:run-shell-command
   (format nil "date +\"~A\""
 	*time-modeline-string*) t))
 
+(stumpwm:run-shell-command "hsetroot -tile $HOME/tree.bmp")
+
 (setf *screen-mode-line-format*
-	(list "%g %W ^> "
+	(list "%g | %W ^> "
 	'(:eval (get-date-modeline))
 	))
 
-(setf *mode-line-border-width* 0)
-(setf *mode-line-background-color* "#ffffff")
-(setf *mode-line-foreground-color* "#00bfff")
+(setf *mode-line-border-width* 2)
+(setf *mode-line-background-color* "#000000")
+(setf *mode-line-foreground-color* "#cccccc")
 
 ;; windows
-(set-focus-color "#00bfff")
-(set-unfocus-color "#00bfff")
+(set-focus-color "#cccccc")
+(set-unfocus-color "#000000")
