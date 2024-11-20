@@ -21,7 +21,7 @@
 (setf *group-format* " %t ")
 (setf *window-format* "%m%n%s ")
 
-(setf *time-modeline-string* "%d.%m.%Y_%H:%M")
+(setf *time-modeline-string* "%d.%m.%Y@%H:%M")
 (set-font "-*-lucidatypewriter-medium-r-normal-*-10-*-*-*-*-*-*-*")
 
 (defun get-date-modeline ()
