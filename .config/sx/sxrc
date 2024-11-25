@@ -3,7 +3,7 @@
 # by hu5hbot
 # @linux.org.ru
 
-WM=/usr/bin/awesome
+WM=/usr/bin/stumpwm
 
 LANG=en_US.UTF-8
 export LANG
@@ -11,12 +11,12 @@ export LANG
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-XSECURELOCK_AUTH_BACKGROUND_COLOR="#000000" XSECURELOCK_AUTH_FOREGROUND_COLOR="#00cc00" XSECURELOCK_AUTH_WARNING_COLOR="#ff0000" XSECURELOCK_DATETIME_FORMAT="%d.%m.%Y_%H:%M" XSECURELOCK_FONT="Terminus:size=12:antialias=false:hinting=true" XSECURELOCK_PASSWORD_PROMPT="time" XSECURELOCK_SHOW_DATETIME="true" XSECURELOCK_SHOW_HOSTNAME="2"  XSECURELOCK_SHOW_USERNAME="true" xss-lock xsecurelock &
+XSECURELOCK_AUTH_BACKGROUND_COLOR="#000000" XSECURELOCK_AUTH_FOREGROUND_COLOR="#aeaeae" XSECURELOCK_AUTH_WARNING_COLOR="#dc2626" XSECURELOCK_DATETIME_FORMAT="%d.%m.%Y@%H:%M" XSECURELOCK_FONT="-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*" XSECURELOCK_PASSWORD_PROMPT="time" XSECURELOCK_SHOW_DATETIME="true" XSECURELOCK_SHOW_HOSTNAME="2"  XSECURELOCK_SHOW_USERNAME="true" xss-lock xsecurelock &
 
 xbindkeys
 xsetroot -cursor_name left_ptr
 xmodmap $HOME/.Xmodmap
 
-xrandr -s 1600x900
+xrandr -s 640x480
 
 $WM
