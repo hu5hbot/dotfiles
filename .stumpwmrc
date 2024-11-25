@@ -2,44 +2,55 @@
 ;; by hu5hbot (github.com/hu5hbotMei)
 ;; @linux.org.ru
 
-;; bar
-(set-fg-color "#cccccc")
+;;init
+(set-font "-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*")
+(setf *mouse-focus-policy* :sloppy)
+(run-shell-command "hsetroot -tile ~/tree.bmp")
+
+;;keys
+(define-key *root-map* (kbd "c") "exec xterm")
+(define-key *root-map* (kbd "C") "exec xterm")
+(define-key *root-map* (kbd "RET") "mode-line")
+(define-key *root-map* (kbd "B") "mode-line")
+(define-key *root-map* (kbd "b") "banish")
+(define-key *root-map* (kbd "f") "exec firefox")
+
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "exec mpc volume -1")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "exec mpc volume +1")
+(define-key *top-map* (kbd "XF86MonBrightnessDown") "exec xbacklight - 1")
+(define-key *top-map* (kbd "XF86MonBrightnessUp") "exec xbacklight + 1")
+(define-key *top-map* (kbd "XF86AudioMute") "exec amixer -q sset Master toggle")
+(define-key *top-map* (kbd "XF86AudioPrev") "exec mpc prev")
+(define-key *top-map* (kbd "XF86AudioPlay") "exec mpc toggle")
+(define-key *top-map* (kbd "XF86AudioStop") "exec mpc stop")
+(define-key *top-map* (kbd "XF86AudioNext") "exec mpc next")
+(define-key *top-map* (kbd "Print") "exec scrot -q 100")
+(define-key *top-map* (kbd "SunPrint_Screen") "exec scrot -q 100")
+
+;;bar
+(set-fg-color "#dc2626")
 (set-bg-color "#000000")
-(set-msg-border-width 1)
-(set-border-color "#cccccc")
-(setf *normal-border-width* 2)
-(setf *maxsize-border-width* 2)
-(setf *window-border-style* :thin)
+(set-msg-border-width 2)
+(set-border-color "#aeaeae")
 (setf *message-window-gravity* :top
 	*input-window-gravity* :top)
 
-;; keys
-(define-key *root-map* (kbd "RET") "exec xterm")
-(define-key *root-map* (kbd "f") "exec firefox")
+;;windows
+(setf *window-border-style* :thin)
+(setf *maxisze-border-width* 2)
+(setf *normal-border-width* 2)
+(set-focus-color "#aeaeae")
+(set-unfocus-color "#aeaeae")
 
-;; modeline
-(setf *group-format* " %t ")
-(setf *window-format* "%m%n%s ")
-
+;;modeline
+(setf *group-format* "%t")
+(setf *window-format* "%n%s%10t")
+(setf *mode-line-timeout* 2)
 (setf *time-modeline-string* "%d.%m.%Y@%H:%M")
-(set-font "-*-lucidatypewriter-medium-r-normal-*-10-*-*-*-*-*-*-*")
-
-(defun get-date-modeline ()
- (stumpwm:run-shell-command
-  (format nil "date +\"~A\""
-	*time-modeline-string*) t))
-
-(stumpwm:run-shell-command "hsetroot -tile $HOME/tree.bmp")
-
 (setf *screen-mode-line-format*
-	(list "%g | %W ^> "
-	'(:eval (get-date-modeline))
-	))
+	(list "%g | %W^>%d"))
 
 (setf *mode-line-border-width* 2)
+(setf *mode-line-border-color* "#aeaeae")
 (setf *mode-line-background-color* "#000000")
-(setf *mode-line-foreground-color* "#cccccc")
-
-;; windows
-(set-focus-color "#cccccc")
-(set-unfocus-color "#000000")
+(setf *mode-line-foreground-color* "#aeaeae")
