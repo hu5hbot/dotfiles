@@ -1,37 +1,41 @@
 ! xterm file
 ! by hu5hbot
 ! @linux.org.ru
+! Requires ttf-sazanami
 
+!! visual
 !special
-*.foreground:	#aeaeae
-*.background:	#000000
-*.cursorColor:	#aeaeae
+*.foreground:	#000000
+*.background:	#ffffff
+*.cursorColor:	#000000
 !black
 *.color0:	#000000
 *.color8:	#000000
 !red
-*.color1:	#cc0000
-*.color9:	#cc0000
+*.color1:	#ff0000
+*.color9:	#ff0000
 !green
-*.color2:	#00cc00
-*.color10:	#00cc00
+*.color2:	#00ff00
+*.color10:	#00ff00
 !yellow
-*.color3:	#cccc00
-*.color11:	#cccc00
+*.color3:	#ffff00
+*.color11:	#ffff00
 !blue
-*.color4:	#0000cc
-*.color12:	#0000cc
+*.color4:	#0000ff
+*.color12:	#0000ff
 !magenta
-*.color5:	#00cccc
-*.color13:	#00cccc
+*.color5:	#00ffff
+*.color13:	#00ffff
 !cyan
-*.color6:	#cc00cc
-*.color14:	#cc00cc
+*.color6:	#ff00ff
+*.color14:	#ff00ff
 !white
-*.color7:	#cccccc
-*.color15:	#cccccc
+*.color7:	#ffffff
+*.color15:	#ffffff
 
-*.font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+*.font: -*-sazanami gothic-medium-r-normal-*-12-*-*-*-*-*-*-*
+
+!! op-s
 xterm*mouseWheelScrollPage:	true
 xterm*cursorBlink:		true
 xterm*saveLines:		5000
