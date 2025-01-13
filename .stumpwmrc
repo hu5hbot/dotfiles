@@ -1,12 +1,92 @@
 ;; stumpwm rc file
-;; by hu5hbot (github.com/hu5hbotMei)
-;; @linux.org.ru
-;; Requires ttf-sazanami
+;; by hu5hbot
+;; @github.com/hu5hbot
 
 ;;init
-(set-font "-*-sazanami gothic-medium-r-normal-*-12-*-*-*-*-*-*-*")
-;;(setf *mouse-focus-policy* :sloppy)
-(run-shell-command "hsetroot -tile ~/tree.bmp")
+(in-package :stumpwm)
+(setf *default-package* :stumpwm)
+(set-module-dir "/usr/share/stumpwm/contrib/")
+(setf *startup-message* nil)
+
+(run-shell-command "hsetroot -tile ~/tile.jpg")
+
+(setf *mouse-focus-policy*      :click
+        *float-window-modifier* :SUPER)
+
+(set-font "-*-terminus-medium-r-normal-*-16-*-*-*-*-*-*-*")
+
+(load-module "beckon")
+(load-module "end-session")
+(load-module "mpd")
+(load-module "urgentwindows")
+(load-module "battery-portable")
+(load-module "cpu")
+(load-module "mem")
+(load-module "swm-gaps")
+(mpd:mpd-connect)
+
+(setf *startup-message* "welcome, user")
+
+;;color
+(defvar fg-col "#ffffff")
+(defvar bg-col "#000000")
+(defvar hi-col "#ff0000")
+(defvar lo-col "#cccccc")
+
+;;modeline
+(setf *mode-line-timeout* 2)
+(setf *time-modeline-string* "%Y.%m.%d %H:%m")
+(setf *group-format* "%t")
+(setf *mode-line-position* :bottom)
+
+(setf *mode-line-background-color*      bg-col
+        *mode-line-foreground-color*    fg-col
+        *mode-line-border-color*        fg-col
+        *mode-line-border-width*        1)
+
+(setf   cpu::*cpu-modeline-fmt*         "%c"
+        mem::*mem-modeline-fmt*         "%a"
+        mpd::*mpd-modeline-fmt*         "%a - %t"
+        mpd::*mpd-status-fmt*           "%a - %t")
+
+(setf *screen-mode-line-format*
+        (list "%g | %W^> | %C | %M | %B | %m | %d"))
+
+;;groups
+(when *initializing*
+        (grename "01")
+        (gnewbg "02")
+        (gnewbg "03")
+        (gnewbg "04"))
+
+(clear-window-placement-rules)
+
+;;windows
+(set-border-color        fg-col)
+(set-focus-color         fg-col)
+(set-unfocus-color       lo-col)
+(set-float-focus-color   hi-col)
+(set-float-unfocus-color lo-col)
+
+(setf *normal-border-width*     1
+      *float-window-border*     1
+      *float-window-title-height*     15
+      *window-border-style*           :thin
+      *window-format*                 "%n%s%c")
+
+;;message/input
+(set-fg-color   fg-col)
+(set-bg-color   bg-col)
+
+(setf *input-window-gravity*    :top
+      *message-window-gravity*  :top)
+
+(setf swm-gaps:*head-gaps-size*  4
+      swm-gaps:*inner-gaps-size* 4
+      swm-gaps:*outer-gaps-size* 4)
+
+(when *initializing*
+        (swm-gaps:toggle-gaps))
 
 ;;keys
 (define-key *root-map* (kbd "c") "exec xterm")
@@ -28,30 +108,4 @@
 (define-key *top-map* (kbd "Print") "exec scrot -q 100")
 (define-key *top-map* (kbd "SunPrint_Screen") "exec scrot -q 100")
 
-;;bar
-(set-fg-color "#000000")
-(set-bg-color "#ffffff")
-(set-msg-border-width 2)
-(set-border-color "#000000")
-(setf *message-window-gravity* :top
-	*input-window-gravity* :top)
 
-;;windows
-(setf *window-border-style* :thin)
-(setf *maxisze-border-width* 1)
-(setf *normal-border-width* 1)
-(set-focus-color "#ffffff")
-(set-unfocus-color "#ffffff")
-
-;;modeline
-(setf *group-format* "%t")
-(setf *window-format* "%n%s%10t")
-;;(setf *mode-line-timeout* 2)
-(setf *time-modeline-string* "%d.%m.%Y@%H:%M")
-(setf *screen-mode-line-format*
-	(list "%g | %W^> | %d"))
-
-(setf *mode-line-border-width* 1)
-(setf *mode-line-border-color* "#000000")
-(setf *mode-line-background-color* "#ffffff")
-(setf *mode-line-foreground-color* "#000000")
