@@ -8,7 +8,7 @@ them directly. If you're only using the WM file or the terminal<br>
 resources, you can figure out what you need just by looking at <br>
 the file itself. I use StumpWM as my window manager.           <br><br>
 
-[Packages]<br>
+[Packages]<br><p>
 - StumpWM       (Window manager)<br>
 - XTerm         (Terminal emulator)<br>
 - Terminus-font (Global font)<br>
@@ -21,7 +21,7 @@ the file itself. I use StumpWM as my window manager.           <br><br>
 - xbindkeys     (Media keybinds)<br>
 - xsetroot      (Change cursor)<br>
 - xmodmap       (Swap alt and super (laptop weirdness))<br>
-- xrandr        (Resolution setting)<br><br>
+- xrandr        (Resolution setting)<br><br></p>
 
 [Credits]<br>
 Thank you to phundrak for the formatting of the StumpWM, I was<br>
