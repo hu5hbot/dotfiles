@@ -1,12 +1,12 @@
 ! xterm file
 ! by hu5hbot
-! @hu5hbot.net
+! @github.com/hu5hbot
 
 !! Colors
 ! special
-*.foreground:   #ffffff
+*.foreground:   #00cccc
 *.background:   #000000
-*.cursorColor:  #ffffff
+*.cursorColor:  #00cccc
 
 ! black
 *.color0:       #000000
@@ -40,9 +40,8 @@
 *.color7:       #ffffff
 *.color15:      #ffffff
 
-
-!XTerm.font: xft:Sazanami Gothic:size=16:antialias=false:style=Gothic-Regular
 *.font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*
+
 !! Options
 xterm*mouseWheelScrollPage:	true
 xterm*cursorBlink:		true

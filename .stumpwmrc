@@ -28,14 +28,14 @@
 (setf *startup-message* "welcome, user")
 
 ;;color
-(defvar fg-col "#ffffff")
+(defvar fg-col "#00cccc")
 (defvar bg-col "#000000")
-(defvar hi-col "#ff0000")
-(defvar lo-col "#cccccc")
+(defvar hi-col "#00ff00")
+(defvar lo-col "#006666")
 
 ;;modeline
 (setf *mode-line-timeout* 2)
-(setf *time-modeline-string* "%Y.%m.%d %H:%m")
+(setf *time-modeline-string* "%Y.%m.%d %H:%M")
 (setf *group-format* "%t")
 (setf *mode-line-position* :bottom)
 

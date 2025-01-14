@@ -3,7 +3,7 @@
 # @linux.org.ru
 
 # global
-export LANG=en_US.UTF-8
+export LANG=ru_RU.UTF-8
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
