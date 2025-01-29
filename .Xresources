@@ -1,12 +1,11 @@
-! xterm file
-! by hu5hbot
-! @github.com/hu5hbot
+! .Xresources
+! @hu5hbot.net
 
 !! Colors
 ! special
-*.foreground:   #00cccc
-*.background:   #000000
-*.cursorColor:  #00cccc
+*.foreground:   #000000
+*.background:   #ffffff
+*.cursorColor:  #000000
 
 ! black
 *.color0:       #000000
@@ -40,7 +39,7 @@
 *.color7:       #ffffff
 *.color15:      #ffffff
 
-*.font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*
+*.font: -*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-*
 
 !! Options
 xterm*mouseWheelScrollPage:	true

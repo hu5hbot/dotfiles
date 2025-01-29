@@ -3,7 +3,7 @@
 # @linux.org.ru
 
 # global
-export LANG=ru_RU.UTF-8
+export LANG=en_US.UTF-8
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -11,8 +11,8 @@ if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
 fi
 
-PS1="${PS1/\$ /\\$ }"
-#PS1="\u% "
+#PS1="${PS1/\$ /\\$ }"
+PS1="\u% >> "
 export PATH="$PATH:$HOME/Bin"
 
 ## alias
@@ -27,8 +27,6 @@ alias kill-monitor="sudo airmon-ng stop wlp3s0mon"
 alias monitor-conn="echo \"sudo airodump-ng -c6 -w FILENAME -d MAC_ADDR STATION\""
 alias monitor-disc="echo \"sudo aireplay-ng --deauth 0 -a MAC_ADDR STATION\""
 
-alias proj="cd $(cat $HOME/working)"
-
 ## arch
 # arch command to remove unneeded packages
 alias pacclear="sudo pacman -Rsn $(pacman -Qdtq)"
@@ -37,5 +35,6 @@ alias paclist="sudo pacman -Qet > $HOME/packages.txt"
 # arch command to prune old packages
 alias pacprune="sudo paccache -r -k 1 -vvv"
 
+alias noop="cd $(cat ~/workingdir)"
 # Created by `pipx` on 2024-11-15 16:11:14
 export PATH="$PATH:/home/m31/.local/bin"

@@ -1,6 +1,5 @@
-;; stumpwm rc file
-;; by hu5hbot
-;; @github.com/hu5hbot
+;; .stumpwmrc file
+;; @hu5hbot.net
 
 ;;init
 (in-package :stumpwm)
@@ -8,49 +7,38 @@
 (set-module-dir "/usr/share/stumpwm/contrib/")
 (setf *startup-message* nil)
 
-(run-shell-command "hsetroot -tile ~/tile.jpg")
+(run-shell-command "sh ~/auto.sh")
 
 (setf *mouse-focus-policy*      :click
         *float-window-modifier* :SUPER)
 
-(set-font "-*-terminus-medium-r-normal-*-16-*-*-*-*-*-*-*")
+(set-font "-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-*")
 
 (load-module "beckon")
 (load-module "end-session")
-(load-module "mpd")
 (load-module "urgentwindows")
-(load-module "battery-portable")
-(load-module "cpu")
-(load-module "mem")
-(load-module "swm-gaps")
-(mpd:mpd-connect)
 
 (setf *startup-message* "welcome, user")
 
 ;;color
-(defvar fg-col "#00cccc")
-(defvar bg-col "#000000")
-(defvar hi-col "#00ff00")
-(defvar lo-col "#006666")
+(defvar fg-col "#000000")
+(defvar bg-col "#ffffff")
+(defvar hi-col "#000000")
+(defvar lo-col "#000000")
 
 ;;modeline
 (setf *mode-line-timeout* 2)
 (setf *time-modeline-string* "%Y.%m.%d %H:%M")
 (setf *group-format* "%t")
-(setf *mode-line-position* :bottom)
+(setf *mode-line-position* :top)
 
 (setf *mode-line-background-color*      bg-col
         *mode-line-foreground-color*    fg-col
-        *mode-line-border-color*        fg-col
-        *mode-line-border-width*        1)
-
-(setf   cpu::*cpu-modeline-fmt*         "%c"
-        mem::*mem-modeline-fmt*         "%a"
-        mpd::*mpd-modeline-fmt*         "%a - %t"
-        mpd::*mpd-status-fmt*           "%a - %t")
+        *mode-line-border-color*        lo-col
+        *mode-line-border-width*        0)
 
 (setf *screen-mode-line-format*
-        (list "%g | %W^> | %C | %M | %B | %m | %d"))
+        (list "%g | %W^> | %d"))
 
 ;;groups
 (when *initializing*
@@ -62,16 +50,16 @@
 (clear-window-placement-rules)
 
 ;;windows
-(set-border-color        fg-col)
+(set-border-color        lo-col)
 (set-focus-color         fg-col)
 (set-unfocus-color       lo-col)
 (set-float-focus-color   hi-col)
 (set-float-unfocus-color lo-col)
 
-(setf *normal-border-width*     1
-      *float-window-border*     1
+(setf *normal-border-width*     2
+      *float-window-border*     2
       *float-window-title-height*     15
-      *window-border-style*           :thin
+      *window-border-style*           :tight
       *window-format*                 "%n%s%c")
 
 ;;message/input
@@ -81,16 +69,9 @@
 (setf *input-window-gravity*    :top
       *message-window-gravity*  :top)
 
-(setf swm-gaps:*head-gaps-size*  4
-      swm-gaps:*inner-gaps-size* 4
-      swm-gaps:*outer-gaps-size* 4)
-
-(when *initializing*
-        (swm-gaps:toggle-gaps))
-
 ;;keys
-(define-key *root-map* (kbd "c") "exec xterm")
-(define-key *root-map* (kbd "C") "exec xterm")
+(define-key *root-map* (kbd "c") "exec urxvt")
+(define-key *root-map* (kbd "C") "exec urxvt")
 (define-key *root-map* (kbd "RET") "mode-line")
 (define-key *root-map* (kbd "B") "mode-line")
 (define-key *root-map* (kbd "b") "banish")

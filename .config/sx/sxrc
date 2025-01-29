@@ -8,12 +8,12 @@ WM=/usr/bin/stumpwm
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-XSECURELOCK_AUTH_BACKGROUND_COLOR="#001111" XSECURELOCK_AUTH_FOREGROUND_COLOR="#00cccc" XSECURELOCK_AUTH_WARNING_COLOR="#00ff00" XSECURELOCK_DATETIME_FORMAT="%Y.%m.%d %H:%M" XSECURELOCK_FONT="-*-terminus-medium-r-normal-*-16-*-*-*-*-*-*-*" XSECURELOCK_PASSWORD_PROMPT="emoticon" XSECURELOCK_SHOW_DATETIME="true" XSECURELOCK_SHOW_HOSTNAME="2"  XSECURELOCK_SHOW_USERNAME="true" xss-lock xsecurelock &
+XSECURELOCK_AUTH_BACKGROUND_COLOR="#ffffff" XSECURELOCK_AUTH_FOREGROUND_COLOR="#000000" XSECURELOCK_AUTH_WARNING_COLOR="#00ff00" XSECURELOCK_DATETIME_FORMAT="%Y.%m.%d %H:%M" XSECURELOCK_FONT="-*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-*" XSECURELOCK_PASSWORD_PROMPT="emoticon" XSECURELOCK_SHOW_DATETIME="true" XSECURELOCK_SHOW_HOSTNAME="2"  XSECURELOCK_SHOW_USERNAME="true" xss-lock xsecurelock &
 
 xbindkeys
 xsetroot -cursor_name left_ptr
 xmodmap $HOME/.Xmodmap
 
-xrandr -s 1368x768
+xrandr -s 640x480
 
 $WM
